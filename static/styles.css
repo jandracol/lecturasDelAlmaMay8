@@ -1,0 +1,33 @@
+/*
+body {
+    margin: 0;
+    overflow: hidden;
+}
+*/
+#gradient {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #219ebc, #023047);
+ /*       background: linear-gradient(to right, #ff0000, #0000ff); */
+    animation: gradientAnimation 0s linear infinite running;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    30% { background-position: 100% 30%; }
+    100% { background-position: 0% 50%; }
+}
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}

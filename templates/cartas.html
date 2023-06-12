@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartas Lecturas del Alma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <style>
+    </style>
+</head>
+<body>
+        <section id="header-carta" style="padding: 5px">
+
+                <div class="px-4 pt-5 my-5 text-center border-bottom">
+                    {% for carta in cartas: %}
+                    {% if carta["id"] == ran_c: %}
+                    <header class="major">
+                    <h2  class="text-white">Carta No. {{ carta["id"]  }}</h2>
+                    </header>
+                    <h1  class="text-white">{{ carta["title"] }}</h1>
+                </div>
+
+                    <div class="col-lg-8 mx-auto">
+                        {% set total = 20 %}
+                        {% for i in range(0, total): %}
+                        <p class="text-wrap lead mb-4"  style="font-size:100%; text-align:left; line-height: 1.2; white-space: nowrap;"> {{ htm_desc_card[i] }}</p>
+                        {% endfor %}
+                <!--                <p class="lead mb-4">{{ carta["desc"] }}</p>    ont-size:100%;-->
+
+                        <header class="major">
+                        <h2 class="text-white">MEDITACIÓN</h2>
+                        </header>
+
+                <!--        <p class="text-wrap lead mb-4" style="text-align:left; ">{{ carta["meditation"]}}</p>-->
+
+
+                        {% set total = 30 %}
+                        {% for i in range(0, total): %}
+                        <p class="text-wrap lead mb-4"  style="font-size:100%; text-align:center; line-height: 1.2; white-space: nowrap;"> {{ htm_card[i] }}</p>
+                        {% endfor %}
+                    </div>
+
+        </section>
+                        <!--                <hr width="50%" color="green" size="50px" align="right" />-->
+        <section id="header-afir" style="padding: 2px">
+                    <div style="padding-left: 200px;  padding-right: 200px"
+>
+                        <hr>
+                        <h2 class="text-center white-text-with-blue-shadow">AFIRMACIÓN</h2>
+                        <hr>
+
+                        {% for i in range(0, total): %}
+                        <p class="gray-background text-wrap white-text-with-blue-shadow"  style="font-size:150%; text-align:center; line-height: 1.2;"> {{ htm_afir_card[i] }}</p>
+                        {% endfor %}
+
+                    </div>
+
+        </section>
+        <section id="music_btn" class="main style2">
+                              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <!--        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Escuchar música</button>-->
+
+                        <button class="btn btn-outline-primary btn-lg" id="ASong" onClick="playPause()">
+
+                            {% if ran_c == 1 %}
+                                <audio src="static/assets/music/musicarta_40.mp3"  loop></audio>
+                <!--                     <audio src="static/assets/music/musicarta1.mp3"  autoplay  loop></audio>-->
+
+                            {% else %}
+                            <audio src="static/assets/music/musicarta_40.mp3"   loop></audio>
+                            {%  endif %}
+                          Música On/Off
+                        </button>
+
+                      </div>
+        </section>
+
+
+    <section class="main style1">
+            <div class="overflow-hidden text-center"  style="max-height: 60vh;">
+                {% if ran_c == 1 %}
+                <div class="container text-center" >
+                        <img src= "static/images/imagen_carta_1_ai.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+
+                {% elif ran_c == 2 %}
+                        <img src= "static/images/imagen_carta_2_1.gif" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                        <img src= "static/images/imagen_carta_2_2_ai.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 3 %}
+                        <img src= "static/images/imagen_carta_3_1_ai.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                        <img src= "static/images/imagen_carta_3_2_ai.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 4 %}
+                        <img src= "static/images/imagen_carta_4_1_ai.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 5 %}
+                        <img src= "static/images/imagen_carta_5_1.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 6 %}
+                        <img src= "static/images/imagen_carta_6_1.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 7 %}
+                        <img src= "static/images/imagen_carta_7.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 8 %}
+                        <img src= "static/images/imagen_carta_8.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 9 %}
+                        <img src= "static/images/imagen_carta_9.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 10 %}
+                        <img src= "static/images/imagen_carta_10.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 11 %}
+                        <img src= "static/images/imagen_carta_11.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 12 %}
+                        <img src= "static/images/imagen_carta_12.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 13 %}
+                        <img src= "static/images/imagen_carta_13.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 14 %}
+                        <img src= "static/images/imagen_carta_14.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 15 %}
+                        <img src= "static/images/imagen_carta_15.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 16 %}
+                        <img src= "static/images/imagen_carta_16.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 17 %}
+                        <img src= "static/images/imagen_carta_17.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 18 %}
+                        <img src= "static/images/imagen_carta_18.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 19 %}
+                        <img src= "static/images/imagen_carta_19.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 20 %}
+                        <img src= "static/images/imagen_carta_20.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 21 %}
+                        <img src= "static/images/imagen_carta_21.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 22 %}
+                        <img src= "static/images/imagen_carta_22.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 23 %}
+                        <img src= "static/images/imagen_carta_23.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 24 %}
+                        <img src= "static/images/imagen_carta_24.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 25 %}
+                        <img src= "static/images/imagen_carta_25.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 26 %}
+                        <img src= "static/images/imagen_carta_26.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 27 %}
+                        <img src= "static/images/imagen_carta_27.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 28 %}
+                        <img src= "static/images/imagen_carta_28.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 29 %}
+                        <img src= "static/images/imagen_carta_29.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 30 %}
+                        <img src= "static/images/imagen_carta_30.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 31 %}
+                        <img src= "static/images/imagen_carta_31.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 32 %}
+                        <img src= "static/images/imagen_carta_32.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 33 %}
+                        <img src= "static/images/imagen_carta_33.gif" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 34 %}
+                        <img src= "static/images/imagen_carta_34.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 35 %}
+                        <img src= "static/images/imagen_carta_35.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 36 %}
+                        <img src= "static/images/imagen_carta_36.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 37 %}
+                        <img src= "static/images/imagen_carta_37.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 38 %}
+                        <img src= "static/images/imagen_carta_38.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 39 %}
+                        <img src= "static/images/imagen_carta_39.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+                {% elif ran_c == 40 %}
+                        <img src= "static/images/imagen_carta_40.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+
+
+                </div>
+                {% else %}
+                    {% set pic = "jade_jar.gif" %}
+                </div>
+        </section>
+        <section>
+              <div class="container">
+                <img src= "static/images/{{ pic }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Imagen Carta 1" width="350" height="600" loading="lazy">
+
+              </div>
+                {%  endif %}
+
+                {% endif %}
+            {% endfor %}
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script>
+          var aud = document.getElementById("ASong").children[0];
+          var isPlaying = false;
+          aud.pause();
+
+          function playPause() {
+            if (isPlaying) {
+              aud.pause();
+            } else {
+              aud.play();
+            }
+            isPlaying = !isPlaying;
+          }
+        </script>
+        </section>
+</body>
+</html>
