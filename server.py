@@ -4,7 +4,6 @@ import random
 
 import requests
 from flask import Flask, render_template
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 # from post import Post
 # import requests
@@ -18,7 +17,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 app = Flask(__name__, template_folder='templates', static_folder='static')
 env_config = os.getenv("PROD_APP_SETTINGS", "config.DevelopmentConfig")
 app.config.from_object(env_config)
-app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1, x_proto=1)
+
 
 @app.route("/")
 def home():
