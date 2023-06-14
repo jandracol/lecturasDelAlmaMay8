@@ -1,3 +1,4 @@
 [build]
+base = "https://github.com/jandracol/lecturasDelAlmaMay8/tree/87eec778b325a2a5866b9a24a2c2ef0c0442d5c4"
 command = "echo 'No build steps required'"  # Since your site is static, no build steps are necessary
 publish = "templates"  # Specify the 'templates' folder as the publish directory
