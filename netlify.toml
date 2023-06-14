@@ -1,4 +1,4 @@
 [build]
 
 command = "echo 'No build steps required'"  # Since your site is static, no build steps are necessary
-publish = "templates"  # Specify the 'templates' folder as the publish directory
+publish = "static"  # Specify the 'templates' folder as the publish directory
